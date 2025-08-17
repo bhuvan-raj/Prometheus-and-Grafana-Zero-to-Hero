@@ -1,10 +1,26 @@
+# Prometheus and Grafana
+<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/pg.png" alt="Banner" />
+
+
+Prometheus is an open-source monitoring system that collects and stores time-series data from various applications and infrastructure components.
+Grafana is an open-source analytics and interactive visualization web application. It doesn't collect data itself but integrates with various data sources, including Prometheus, to create customizable dashboards with charts, graphs, and other visualizations.
+
+
+
+
+
 ## Prometheus Monitoring Tool: In-Depth Teaching Note
+<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/dp.jpg" alt="Banner" />
+
 
 Prometheus is an **open-source monitoring and alerting toolkit** designed specifically for reliability and scalability in dynamic, cloud-native environments such as Kubernetes. Originally developed by SoundCloud in 2012 and later contributed to the CNCF, Prometheus has become the go-to solution for metrics collection and monitoring in modern IT systems.[1]
 
 ***
 
 ### Key Concepts & Architecture
+
+<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/prometheus.webp" alt="Banner" />
+
 
 #### **1. Time-Series Database (TSDB)**
 At the core of Prometheus is its time-series database. All metrics are stored as **time-series data**—numerical values indexed by timestamps and labels. These labels (like method, path, status) add rich context and granularity, enabling users to track specific metrics over time with powerful filtering and aggregation.
