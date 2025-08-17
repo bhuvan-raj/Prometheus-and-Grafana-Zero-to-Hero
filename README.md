@@ -84,14 +84,7 @@ A broad, active open-source community fuels continuous development, extensive do
 
 ***
 
-### Teaching Suggestions
-
-- **Demonstrate** setting up a target with Node Exporter and custom client-library metrics.
-- **Practice PromQL** queries to aggregate, filter, and analyze real-world metrics.
-- **Configure service discovery** in Kubernetes for zero-touch monitoring.
-- **Show** how to set up alerts based on query thresholds and integrate with Alertmanager.
-- **Integrate Grafana** dashboards for visualization of Prometheus metrics.
-
-Mastering Prometheus ensures your students are equipped for advanced, reliable monitoring in any modern cloud-native or dynamic infrastructure context.
-
+checkout official docs for more info: 
 [1] https://prometheus.io/docs/introduction/overview/
+
+
