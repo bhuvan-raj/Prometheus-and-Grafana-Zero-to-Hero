@@ -57,7 +57,6 @@ The **Alertmanager** handles alerts sent by the Prometheus server. Its key funct
 * **Deduplication**: Suppresses duplicate alerts.
 * **Grouping**: Groups similar alerts into a single notification.
 * **Routing**: Routes alerts to various notification channels (e.g., email, Slack, PagerDuty, VictorOps) based on routing trees defined in its configuration.
-* **Inhibition**: Silences alerts based on other active alerts (e.g., if a critical alert is firing, less critical alerts for the same issue can be suppressed).
 * **Silences**: Allows users to temporarily silence alerts for planned maintenance or known issues.
 
 ### e. Client Libraries
