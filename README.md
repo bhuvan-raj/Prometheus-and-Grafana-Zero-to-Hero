@@ -42,6 +42,9 @@ Examples include:
 
 * **Node Exporter**: Collects system-level metrics (CPU, memory, disk I/O, network) from Linux/Unix hosts.
 * **cAdvisor**: Exposes container resource usage and performance metrics.
+* **Kube-State-Metrics**: Listens to the Kubernetes API server and generates metrics based on the state of Kubernetes objects (like Deployments, Pods, Services, ReplicaSets, DaemonSets, Jobs, etc.), providing insights into your cluster's orchestration and health.
+* **Web Server Exporters**: Such as HAProxy Exporter, Nginx Exporter, and Apache Exporter, which provide metrics on HTTP requests, connections, and server health.
+* **Cloud Service Exporters**: For various cloud providers, like AWS CloudWatch Exporter, Azure Monitor Exporter, or Google Stackdriver Exporter, to pull metrics from cloud-native monitoring services into Prometheus.
 * **Database Exporters**: For MySQL, PostgreSQL, Redis, etc., exposing database-specific metrics.
 * **Application-Specific Exporters**: Many applications (e.g., HAProxy, Nginx) have their own exporters.
 
