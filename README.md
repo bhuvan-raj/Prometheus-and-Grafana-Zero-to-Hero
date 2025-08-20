@@ -25,7 +25,7 @@ The architecture of Prometheus is designed for **reliability** and **scalability
 
 The Prometheus ecosystem consists of several core components that work together to provide a comprehensive monitoring solution:
 
- - a. Prometheus Server
+### a. Prometheus Server
 This is the heart of the system. The Prometheus server is a single binary that handles several crucial tasks:
 
 * **Scraping**: It pulls metrics from instrumented targets (e.g., application instances, databases, servers) over HTTP. Targets expose metrics in a specific text-based exposition format.
@@ -34,7 +34,7 @@ This is the heart of the system. The Prometheus server is a single binary that h
 * **HTTP API**: It exposes an HTTP API for querying data and managing the server.
 * **Service Discovery**: While not a separate component, the server incorporates various service discovery mechanisms (e.g., Kubernetes, Consul, EC2, DNS) to dynamically discover targets to scrape, eliminating the need for manual configuration in dynamic environments.
 
-- b. Exporters
+### b. Exporters
 Exporters are lightweight agents that expose existing metrics from third-party systems in a Prometheus-compatible format. Since Prometheus itself doesn't directly integrate with every system, exporters act as translators.
 
 
@@ -45,10 +45,10 @@ Examples include:
 * **Database Exporters**: For MySQL, PostgreSQL, Redis, etc., exposing database-specific metrics.
 * **Application-Specific Exporters**: Many applications (e.g., HAProxy, Nginx) have their own exporters.
 
-- c. Pushgateway
+### c. Pushgateway
 While Prometheus primarily uses a pull model, the **Pushgateway** allows for ephemeral or batch jobs that cannot be scraped directly to expose their metrics to Prometheus. Jobs push their metrics to the Pushgateway, and then the Prometheus server scrapes the Pushgateway. This is particularly useful for short-lived services or batch jobs that may not exist long enough to be scraped directly by Prometheus.
 
-- d. Alertmanager
+### d. Alertmanager
 The **Alertmanager** handles alerts sent by the Prometheus server. Its key functionalities include:
 
 * **Deduplication**: Suppresses duplicate alerts.
@@ -57,7 +57,7 @@ The **Alertmanager** handles alerts sent by the Prometheus server. Its key funct
 * **Inhibition**: Silences alerts based on other active alerts (e.g., if a critical alert is firing, less critical alerts for the same issue can be suppressed).
 * **Silences**: Allows users to temporarily silence alerts for planned maintenance or known issues.
 
-- e. Client Libraries
+### e. Client Libraries
 For applications to expose metrics in a format Prometheus can understand, they need to be **instrumented**. Prometheus provides **client libraries** for various programming languages (Go, Java, Python, Ruby, Node.js, etc.). These libraries allow developers to define and expose application-specific metrics (counters, gauges, histograms, summaries) directly within their code.
 
 ***
