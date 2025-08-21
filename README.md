@@ -228,6 +228,94 @@ A broad, active open-source community fuels continuous development, extensive do
 | Alerting              | Prometheus alert rules + Alertmanager for notifications     |
 | Ecosystem             | Extensive exporters, integrations, active community         |
 
+
+
+
+# What is Grafana?
+
+<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/grafana.png" alt="Banner" />
+
+
+Grafana is a **powerful open-source analytics and monitoring tool** designed for visualizing, analyzing, and alerting on data from multiple sources. Primarily used for infrastructure and application monitoring, Grafana transforms complex datasets into interactive, visually-rich dashboards that support rapid operational insights and troubleshooting.
+
+### Core Concepts
+
+#### 1. Dashboards and Panels
+
+- **Dashboards**: The main user interface in Grafana, dashboards are made up of one or more panels arranged in a grid. They serve as **centralized hubs** for real-time data visualization and monitoring. 
+- **Panels**: The building blocks of dashboards, each displaying data from one or more sources in various formats such as time series graphs, gauges, heatmaps, stat panels, and tables. Panels can be deeply customized through queries, visualization settings, and dynamic field/override options.[5][4]
+
+#### 2. Data Sources and Plugins
+
+- Grafana supports a vast range of **data sources** (e.g., Prometheus, InfluxDB, MySQL, Elasticsearch, AWS CloudWatch, Google Cloud Monitoring).
+- Each data source is integrated via a **plugin** that handles connection, authentication, and data retrieval, translating Grafana queries into source-specific queries and back into unified data frames for visualization.
+- **Plugin architecture** enables extensibility, supporting custom data sources and panel types.[4][5]
+
+***
+
+### Grafana Architecture
+
+| Layer/Component      | Description                                                                                  |
+|----------------------|---------------------------------------------------------------------------------------------|
+| Frontend (UI)        | Built with TypeScript and React; allows intuitive dashboard creation and management[6].      |
+| Backend (Server)     | Written in Go; communicates with data sources using plugins and APIs[6][4].                 |
+| Plugins              | Connectors for data sources, panel visualizations, and apps. Extensible for custom needs[5].|
+| LGTM Stack           | Refers to integration with Loki (logs), Grafana, Tempo (traces), and Mimir (metrics)[4].   |
+| Microservices        | Modern Grafana is designed as distributed microservices, yet still runs as a single binary[4].|
+
+***
+
+### Key Features
+
+- **Centralized Data Access:** Aggregate metrics, logs, and traces from multiple sources in unified dashboards.
+- **Powerful Visualizations:** Multiple chart types (time series, heatmaps, gauges, tables, etc.) for deep insights.
+- **Real-Time Monitoring:** Dashboards auto-refresh for live system visibility.
+- **Data Transformation:** Advanced query and transformation features for shaping data before visualization.
+- **Custom Alerts:** Define alert rules on panels to trigger notifications based on thresholds or anomalies.
+- **Templating:** Use variables and dynamic panels for flexible, reusable dashboards.
+- **Drilldown & Links:** Link between dashboards for both overview and drilldown analyses.[2][7][5]
+- **User Permissions:** Manage user roles, folder structures, and dashboard access for team collaboration.
+
+***
+
+### Workflow: From Data Source to Visualization
+
+1. **Data Source Plugin:** Grafana connects to external data sources via plugins, establishing communication and extracting data using custom queries.
+2. **Data Querying & Transformation:** In Grafana’s query editor, users can write queries, filter, and manipulate datasets from the source.
+3. **Dashboard Composition:** Users lay out dashboards by adding and configuring panels. Each panel executes its configured query, transforms data, and displays the result.
+4. **Custom Visualizations:** Panels are customized using thresholds, color mapping, and field overrides to highlight actionable insights or anomalies.
+5. **Alerting:** Users set alert rules on queries/panels to receive notifications for critical events or outages.
+6. **Sharing & Collaboration:** Dashboards can be shared, exported, imported, or integrated with external systems.
+
+***
+
+### Common Use Cases
+
+- **Infrastructure Monitoring:** Track CPU, memory, disk I/O, and network performance across servers and clusters.
+- **Application Monitoring:** Monitor response times, throughput, error rates, and user sessions.
+- **Business Analytics:** Display sales metrics, customer engagement, or any key business indicators.
+- **IoT & Custom Metrics:** Visualize environmental, industrial, or custom time-series data from sensors and devices.
+
+***
+
+
+
+### Summary
+
+Grafana delivers **real-time, interactive, and highly customizable monitoring** and analytics by connecting to disparate data sources, supporting robust visualizations, full alerting, and extensive integration features—all via an open-source, plugin-extensible platform.[1][5][2][4]
+
+[1] https://grafana.com/docs/grafana/latest/fundamentals/
+[2] https://www.skedler.com/blog/everything-you-need-to-know-about-grafana/
+[3] https://grafana.com/docs/grafana/latest/introduction/
+[4] https://www.igmguru.com/blog/what-is-grafana
+[5] https://kodekloud.com/blog/how-grafana-works/
+[6] https://www.kozhuhds.com/blog/an-easy-look-at-grafana-architecture/
+[7] https://grafana.com/blog/2022/06/06/grafana-dashboards-a-complete-guide-to-all-the-different-types-you-can-build/
+[8] https://grafana.com/tutorials/grafana-fundamentals/
+[9] https://grafana.com/tutorials/
+[10] https://grafana.com/docs/grafana/latest/getting-started/
+[11] https://www.youtube.com/watch?v=lILY8eSspEo
+[12] https://www.youtube.com/watch?v=oPumWaoNw5s
 ***
 
 checkout official docs for more info: 
