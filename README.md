@@ -247,7 +247,7 @@ Grafana is a **powerful open-source analytics and monitoring tool** designed for
 
 #### 2. Data Sources and Plugins
 
-- Grafana supports a vast range of **data sources** (e.g., Prometheus, InfluxDB, MySQL, Elasticsearch, AWS CloudWatch, Google Cloud Monitoring).
+- Grafana supports a vast range of **data sources** 
 - Each data source is integrated via a **plugin** that handles connection, authentication, and data retrieval, translating Grafana queries into source-specific queries and back into unified data frames for visualization.
 - **Plugin architecture** enables extensibility, supporting custom data sources and panel types.[4][5]
 
