@@ -304,21 +304,21 @@ Grafana is a **powerful open-source analytics and monitoring tool** designed for
 
 Grafana delivers **real-time, interactive, and highly customizable monitoring** and analytics by connecting to disparate data sources, supporting robust visualizations, full alerting, and extensive integration features—all via an open-source, plugin-extensible platform.[1][5][2][4]
 
-[1] https://grafana.com/docs/grafana/latest/fundamentals/
-[2] https://www.skedler.com/blog/everything-you-need-to-know-about-grafana/
-[3] https://grafana.com/docs/grafana/latest/introduction/
-[4] https://www.igmguru.com/blog/what-is-grafana
-[5] https://kodekloud.com/blog/how-grafana-works/
-[6] https://www.kozhuhds.com/blog/an-easy-look-at-grafana-architecture/
-[7] https://grafana.com/blog/2022/06/06/grafana-dashboards-a-complete-guide-to-all-the-different-types-you-can-build/
-[8] https://grafana.com/tutorials/grafana-fundamentals/
-[9] https://grafana.com/tutorials/
-[10] https://grafana.com/docs/grafana/latest/getting-started/
-[11] https://www.youtube.com/watch?v=lILY8eSspEo
-[12] https://www.youtube.com/watch?v=oPumWaoNw5s
+- https://grafana.com/docs/grafana/latest/fundamentals/
+- https://www.skedler.com/blog/everything-you-need-to-know-about-grafana/
+- https://grafana.com/docs/grafana/latest/introduction/
+- https://www.igmguru.com/blog/what-is-grafana
+- https://kodekloud.com/blog/how-grafana-works/
+- https://www.kozhuhds.com/blog/an-easy-look-at-grafana-architecture/
+- https://grafana.com/blog/2022/06/06/grafana-dashboards-a-complete-guide-to-all-the-different-types-you-can-build/
+- https://grafana.com/tutorials/grafana-fundamentals/
+- https://grafana.com/tutorials/
+- https://grafana.com/docs/grafana/latest/getting-started/
+- https://www.youtube.com/watch?v=lILY8eSspEo
+- https://www.youtube.com/watch?v=oPumWaoNw5s
 ***
 
 checkout official docs for more info: 
-[1] https://prometheus.io/docs/introduction/overview/
+- https://prometheus.io/docs/introduction/overview/
 
 
