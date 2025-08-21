@@ -302,7 +302,7 @@ Grafana is a **powerful open-source analytics and monitoring tool** designed for
 
 ### Summary
 
-Grafana delivers **real-time, interactive, and highly customizable monitoring** and analytics by connecting to disparate data sources, supporting robust visualizations, full alerting, and extensive integration features—all via an open-source, plugin-extensible platform.[1][5][2][4]
+Grafana delivers **real-time, interactive, and highly customizable monitoring** and analytics by connecting to disparate data sources, supporting robust visualizations, full alerting, and extensive integration features—all via an open-source, plugin-extensible platform.
 
 - https://grafana.com/docs/grafana/latest/fundamentals/
 - https://www.skedler.com/blog/everything-you-need-to-know-about-grafana/
