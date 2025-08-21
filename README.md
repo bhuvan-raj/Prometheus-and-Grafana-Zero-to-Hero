@@ -321,11 +321,11 @@ Grafana delivers **real-time, interactive, and highly customizable monitoring** 
 checkout official docs for more info: 
 - https://prometheus.io/docs/introduction/overview/
 
-#Hands on lab to install Prometheus and Grafana in a Kubernetes Cluster
+# Hands on lab to install Prometheus and Grafana in a Kubernetes Cluster
 
 -----
 
-## 2\. Create Your Deployment and Deploy to Kubernetes cluster
+## Create Your Deployment and Deploy to Kubernetes cluster
 
 **Example `my-app-deployment.yaml`:**
 
@@ -375,7 +375,7 @@ Apply this with `kubectl apply -f my-app-deployment.yaml`.
 
 -----
 
-## 3\. Set Up Prometheus and Grafana (using `kube-prometheus-stack`)
+## Set Up Prometheus and Grafana (using `kube-prometheus-stack`)
 
 As covered in the previous interaction, the `kube-prometheus-stack` Helm chart is the recommended way to deploy Prometheus, Grafana, and related components.
 
@@ -394,7 +394,7 @@ Prometheus, deployed by the Prometheus Operator within this stack, will automati
 
 -----
 
-## 4\. Access and Visualize in Grafana
+##  Access and Visualize in Grafana
 
 1.  **Port-forward Grafana:**
     ```bash
