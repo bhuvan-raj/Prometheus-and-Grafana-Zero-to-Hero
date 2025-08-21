@@ -321,4 +321,125 @@ Grafana delivers **real-time, interactive, and highly customizable monitoring** 
 checkout official docs for more info: 
 - https://prometheus.io/docs/introduction/overview/
 
+#Hands on lab to install Prometheus and Grafana in a Kubernetes Cluster
+
+-----
+
+## 2\. Create Your Deployment and Deploy to Kubernetes cluster
+
+**Example `my-app-deployment.yaml`:**
+
+```yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-flask-app
+  labels:
+    app: my-flask-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-flask-app
+  template:
+    metadata:
+      labels:
+        app: my-flask-app
+      # Important: Annotations for Prometheus auto-discovery
+      annotations:
+        prometheus.io/scrape: "true" # Tell Prometheus to scrape this pod
+        prometheus.io/port: "5000"   # The port where metrics are exposed
+    spec:
+      containers:
+      - name: my-flask-app-container
+        image: bhuvanraj123/monitor-app 
+        ports:
+        - containerPort: 5000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-flask-app-service
+  labels:
+    app: my-flask-app
+spec:
+  selector:
+    app: my-flask-app
+  ports:
+    - protocol: TCP
+      port: 80 # Service port
+      targetPort: 5000 # Target port in the pod
+```
+
+Apply this with `kubectl apply -f my-app-deployment.yaml`.
+
+-----
+
+## 3\. Set Up Prometheus and Grafana (using `kube-prometheus-stack`)
+
+As covered in the previous interaction, the `kube-prometheus-stack` Helm chart is the recommended way to deploy Prometheus, Grafana, and related components.
+
+1.  **Add Helm Repositories:**
+    ```bash
+    helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+    helm repo update
+    ```
+2.  **Install `kube-prometheus-stack`:**
+    ```bash
+    kubectl create namespace monitoring
+    helm install prometheus-stack prometheus-community/kube-prometheus-stack --namespace monitoring
+    ```
+
+Prometheus, deployed by the Prometheus Operator within this stack, will automatically discover and scrape metrics from your application pods if they have the `prometheus.io/scrape: "true"` and `prometheus.io/port: "<your-metrics-port>"` annotations. This is a powerful feature of the Prometheus Operator.
+
+-----
+
+## 4\. Access and Visualize in Grafana
+
+1.  **Port-forward Grafana:**
+    ```bash
+    kubectl port-forward service/prometheus-stack-grafana 3000:80 -n monitoring
+    ```
+    Access Grafana at `http://localhost:3000`. Get the password as described before:
+    ```bash
+    kubectl get secret --namespace monitoring prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+    ```
+2.  **Explore Data Sources:** Inside Grafana, you'll find that Prometheus is already configured as a data source by the Helm chart.
+3.  **Create Dashboards:**
+      * Click on the **Dashboards** icon on the left navigation bar.
+      * You can import existing dashboards (e.g., for Kubernetes cluster overview, Node Exporter, kube-state-metrics) or create new ones.
+      * To visualize your custom application metrics:
+          * Create a new dashboard (`+` -\> `Dashboard`).
+          * Add a new panel (`Add new panel`).
+          * In the **Query** tab, select your Prometheus data source.
+          * Enter your PromQL query (e.g., `rate(http_requests_total{app="my-flask-app"}[5m])` for requests per second, or `histogram_quantile(0.99, sum by (le, method, endpoint) (rate(http_request_duration_seconds_bucket{app="my-flask-app"}[5m])))` for 99th percentile latency).
+          * Choose appropriate visualizations (Graph, Stat, Gauge, Table, etc.).
+
+-----
+
+## Best Practices for Application Monitoring
+
+  * **Standardized Naming:** Follow Prometheus metric naming best practices (snake\_case, base units, clear descriptions).
+  * **Labels:** Use **labels** effectively to add context to your metrics (e.g., `method`, `endpoint`, `status_code`, `environment`, `service_name`). This allows for powerful filtering and aggregation in PromQL.
+  * **Resource Requests and Limits:** Always set **resource requests and limits** in your Kubernetes deployments to ensure your applications get the resources they need and don't consume too much, preventing noisy neighbor issues.
+  * **Alerting:** Configure **Alertmanager** (included in `kube-prometheus-stack`) to send notifications when critical metrics cross thresholds (e.g., high error rates, long latencies, low available memory).
+  * **Logs and Traces:** While metrics provide aggregated insights, remember the other pillars of observability:
+      * **Logs:** For detailed event data (use a centralized logging solution like Loki or ELK stack).
+      * **Traces:** For understanding the flow of requests through distributed systems (e.g., using OpenTelemetry and Jaeger/Tempo). The `kube-prometheus-stack` can integrate with these.
+  * **Health Checks:** Implement Kubernetes **liveness and readiness probes** in your application deployments to help Kubernetes manage your application's lifecycle effectively.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
