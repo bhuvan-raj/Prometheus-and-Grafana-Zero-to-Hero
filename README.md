@@ -406,25 +406,13 @@ helm repo update
 
 -----
 
-## 2\. Install Grafana
-
-You can install Grafana into its own namespace (`grafana` is a common choice) with the default settings.
-
-```bash
-# Create a dedicated namespace for Grafana
-kubectl create namespace grafana
-
-# Install the Grafana chart
-helm install grafana grafana/grafana --namespace grafana
-```
-
 ### Accessing Grafana and Getting the Password
 
 1.  **Port-forward the Grafana Service:**
     To access the UI locally, forward a port from your machine to the Grafana service inside the cluster.
 
     ```bash
-    kubectl port-forward service/grafana 3000:80 -n grafana
+    kubectl port-forward service/prometheus-stack-grafana 3000:80 -n monitoring
     ```
 
     *Access:* Open your web browser to **`http://localhost:3000`**.
@@ -433,20 +421,17 @@ helm install grafana grafana/grafana --namespace grafana
     The default username is **`admin`**. The password is stored in a Kubernetes Secret. Retrieve it using `base64` decoding:
 
     ```bash
-    kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
-    ```
-
-
-##  Access and Visualize in Grafana
-
-1.  **Port-forward Grafana:**
-    ```bash
-    kubectl port-forward service/prometheus-stack-grafana 3000:80 -n monitoring
-    ```
-    Access Grafana at `http://localhost:3000`. Get the password as described before:
-    ```bash
     kubectl get secret --namespace monitoring prometheus-stack-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
     ```
+
+
+##  Access Prometheus
+
+1.  **Port-forward Prometheus:**
+    ```bash
+    kubectl port-forward service/prometheus-stack-kube-prome-prometheus 9090:9090 -n monitoring
+    ```
+   
 2.  **Explore Data Sources:** Inside Grafana, you'll find that Prometheus is already configured as a data source by the Helm chart.
 3.  **Create Dashboards:**
       * Click on the **Dashboards** icon on the left navigation bar.
