@@ -429,7 +429,7 @@ helm repo update
 
 1.  **Port-forward Prometheus:**
     ```bash
-    kubectl port-forward service/prometheus-stack-kube-prome-prometheus 9090:9090 -n monitoring
+    kubectl port-forward svc/prometheus-operated 9090:9090 -n monitoring
     ```
    
 2.  **Explore Data Sources:** Inside Grafana, you'll find that Prometheus is already configured as a data source by the Helm chart.
