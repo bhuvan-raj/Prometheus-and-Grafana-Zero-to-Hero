@@ -352,7 +352,7 @@ spec:
     spec:
       containers:
       - name: my-flask-app-container
-        image: bhuvanraj123/monitor-app 
+        image: nginx 
         ports:
         - containerPort: 5000
 ---
@@ -391,8 +391,51 @@ As covered in the previous interaction, the `kube-prometheus-stack` Helm chart i
     ```
 
 Prometheus, deployed by the Prometheus Operator within this stack, will automatically discover and scrape metrics from your application pods if they have the `prometheus.io/scrape: "true"` and `prometheus.io/port: "<your-metrics-port>"` annotations. This is a powerful feature of the Prometheus Operator.
+Installing Grafana specifically using Helm, separate from the `kube-prometheus-stack`, is straightforward.
+
+Here are the steps to install the official Grafana Helm chart:
+
+## 1\. Add the Grafana Helm Repository
+
+First, you need to add the official Grafana Helm chart repository to your Helm configuration.
+
+```bash
+helm repo add grafana https://grafana.github.io/helm-charts
+helm repo update
+```
 
 -----
+
+## 2\. Install Grafana
+
+You can install Grafana into its own namespace (`grafana` is a common choice) with the default settings.
+
+```bash
+# Create a dedicated namespace for Grafana
+kubectl create namespace grafana
+
+# Install the Grafana chart
+helm install grafana grafana/grafana --namespace grafana
+```
+
+### Accessing Grafana and Getting the Password
+
+1.  **Port-forward the Grafana Service:**
+    To access the UI locally, forward a port from your machine to the Grafana service inside the cluster.
+
+    ```bash
+    kubectl port-forward service/grafana 3000:80 -n grafana
+    ```
+
+    *Access:* Open your web browser to **`http://localhost:3000`**.
+
+2.  **Get the Admin Password:**
+    The default username is **`admin`**. The password is stored in a Kubernetes Secret. Retrieve it using `base64` decoding:
+
+    ```bash
+    kubectl get secret --namespace grafana grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+    ```
+
 
 ##  Access and Visualize in Grafana
 
@@ -427,6 +470,7 @@ Prometheus, deployed by the Prometheus Operator within this stack, will automati
       * **Logs:** For detailed event data (use a centralized logging solution like Loki or ELK stack).
       * **Traces:** For understanding the flow of requests through distributed systems (e.g., using OpenTelemetry and Jaeger/Tempo). The `kube-prometheus-stack` can integrate with these.
   * **Health Checks:** Implement Kubernetes **liveness and readiness probes** in your application deployments to help Kubernetes manage your application's lifecycle effectively.
+
 
 
 
