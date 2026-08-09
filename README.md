@@ -49,6 +49,7 @@ This repository breaks down Prometheus and Grafana into focused, self-contained 
 |---|-------|-------------|
 | 9 | [Install Prometheus and Grafana on Kubernetes](docs/09-kubernetes-monitoring-lab.md) | Full lab using `kube-prometheus-stack` |
 | 10 | [Application Monitoring Best Practices](docs/10-monitoring-best-practices.md) | Real-world tips for reliable monitoring |
+| 11 | [Installing Node Exporter on AWS EC2 Machine](docs/NodeExporter-Installation.md) | Installing NodeExporter and monitoring an aws ec2 server |
 
 ---
 
