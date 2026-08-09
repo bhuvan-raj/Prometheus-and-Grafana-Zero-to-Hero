@@ -123,7 +123,7 @@ Prometheus can be configured to write (and read, in some cases) its time-series 
 ### Popular External Storage Solutions
 Here are the most common and robust solutions for external persistence, especially in Kubernetes environments:
 
-- 1. Thanos
+## 1. Thanos
 Thanos is an open-source project that extends Prometheus for long-term storage, high availability, and a global query view. It's an excellent choice for Kubernetes.
 
 Key Components:
@@ -142,7 +142,7 @@ Persistence Mechanism: Data is persisted in cost-effective object storage.
 
 High Availability: Achieved by running multiple Prometheus replicas with Thanos Sidecars, and Thanos Query handles deduplication.
 
-- 2. Cortex
+## 2.Cortex
 Cortex is another robust open-source solution designed for horizontally scalable, multi-tenant, and long-term storage of Prometheus metrics. It's often favored by larger organizations or those building monitoring-as-a-service platforms.
 
 Architecture: Cortex is a distributed system comprising many microservices (e.g., ingesters, distributors, storages, queriers).
@@ -155,7 +155,7 @@ Scalability: Built for massive scale, able to ingest and query billions of sampl
 
 High Availability: Inherently highly available due to its distributed nature.
 
-- 3. Mimir
+## 3. Mimir
 Mimir is a newer project from Grafana Labs, heavily inspired by Cortex but focused on being simpler to operate and offering better performance. It provides massive scalability and long-term storage for Prometheus metrics.
 
 Features: Scalability, high availability, multi-tenancy, and excellent query performance.
