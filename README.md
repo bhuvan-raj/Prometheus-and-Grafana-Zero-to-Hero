@@ -29,27 +29,28 @@ This repository breaks down Prometheus and Grafana into focused, self-contained 
 
 | # | Topic | Description |
 |---|-------|-------------|
-| 1 | [What is Prometheus?](docs/01-what-is-prometheus.md) | Introduction and core concepts |
-| 2 | [Prometheus Architecture](docs/02-prometheus-architecture.md) | Components and how they fit together |
-| 3 | [Prometheus Data Model](docs/03-prometheus-data-model.md) | Metrics, labels, and time series |
-| 4 | [Pull vs Push Model](docs/04-pull-vs-push.md) | How Prometheus collects data |
-| 5 | [Storage, HA and Long-Term Storage](docs/05-storage-ha-long-term-storage.md) | TSDB internals, high availability, remote storage |
-| 6 | [Service Discovery](docs/06-service-discovery.md) | Dynamic target discovery mechanisms |
-| 7 | [Operational Aspects](docs/07-operational-aspects.md) | Running Prometheus in production |
+| 1 | [Introduction to Monitoring](docs/00-Introduction-to-Monitoring.md) | Introduction to Monitoring and Observability |
+| 2 | What is Prometheus?](docs/01-what-is-prometheus.md) | Introduction and core concepts |
+| 3 | [Prometheus Architecture](docs/02-prometheus-architecture.md) | Components and how they fit together |
+| 4 | [Prometheus Data Model](docs/03-prometheus-data-model.md) | Metrics, labels, and time series |
+| 5 | [Pull vs Push Model](docs/04-pull-vs-push.md) | How Prometheus collects data |
+| 6 | [Storage, HA and Long-Term Storage](docs/05-storage-ha-long-term-storage.md) | TSDB internals, high availability, remote storage |
+| 7 | [Service Discovery](docs/06-service-discovery.md) | Dynamic target discovery mechanisms |
+| 8 | [Operational Aspects](docs/07-operational-aspects.md) | Running Prometheus in production |
 
 ### 📈 Grafana
 
 | # | Topic | Description |
 |---|-------|-------------|
-| 8 | [What is Grafana?](docs/08-what-is-grafana.md) | Visualization layer for your metrics |
+| 9 | [What is Grafana?](docs/08-what-is-grafana.md) | Visualization layer for your metrics |
 
 ### 🛠️ Hands-on
 
 | # | Topic | Description |
 |---|-------|-------------|
-| 9 | [Install Prometheus and Grafana on Kubernetes](docs/09-kubernetes-monitoring-lab.md) | Full lab using `kube-prometheus-stack` |
-| 10 | [Application Monitoring Best Practices](docs/10-monitoring-best-practices.md) | Real-world tips for reliable monitoring |
-| 11 | [Installing Node Exporter on AWS EC2 Machine](docs/NodeExporter-Installation.md) | Installing NodeExporter and monitoring an aws ec2 server |
+| 10 | [Install Prometheus and Grafana on Kubernetes](docs/09-kubernetes-monitoring-lab.md) | Full lab using `kube-prometheus-stack` |
+| 11 | [Application Monitoring Best Practices](docs/10-monitoring-best-practices.md) | Real-world tips for reliable monitoring |
+| 12 | [Installing Node Exporter on AWS EC2 Machine](docs/NodeExporter-Installation.md) | Installing NodeExporter and monitoring an aws ec2 server |
 
 ---
 
