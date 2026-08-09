@@ -1,52 +1,84 @@
-# Prometheus and Grafana
+<div align="center">
 
-<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/pg.png" alt="Prometheus and Grafana" />
+# 📊 Prometheus & Grafana — Zero to Hero
 
-A practical **Prometheus and Grafana Zero to Hero** learning repository covering Prometheus architecture, exporters, PromQL concepts, alerting, Grafana dashboards, Kubernetes monitoring, and a hands-on deployment using `kube-prometheus-stack`.
+<img src="https://github.com/bhuvan-raj/Prometheus-and-Grafana/blob/main/assets/pg.png" alt="Prometheus and Grafana" width="700" />
 
-## Table of Contents
+**A practical, hands-on learning repository for mastering monitoring and observability with Prometheus and Grafana on Kubernetes.**
 
-### Prometheus
-1. [What is Prometheus?](docs/01-what-is-prometheus.md)
-2. [Prometheus Architecture](docs/02-prometheus-architecture.md)
-3. [Prometheus Data Model](docs/03-prometheus-data-model.md)
-4. [Pull vs Push Model](docs/04-pull-vs-push.md)
-5. [Storage, HA and Long-Term Storage](docs/05-storage-ha-long-term-storage.md)
-6. [Service Discovery](docs/06-service-discovery.md)
-7. [Operational Aspects](docs/07-operational-aspects.md)
+![Status](https://img.shields.io/badge/status-active-brightgreen)
+![Topics](https://img.shields.io/badge/topics-10-blue)
+![Level](https://img.shields.io/badge/level-beginner%20to%20advanced-orange)
+![Stack](https://img.shields.io/badge/stack-kube--prometheus--stack-red)
 
-### Grafana
-8. [What is Grafana?](docs/08-what-is-grafana.md)
+</div>
 
-### Hands-on
-9. [Install Prometheus and Grafana on Kubernetes](docs/09-kubernetes-monitoring-lab.md)
-10. [Application Monitoring Best Practices](docs/10-monitoring-best-practices.md)
+---
 
-## Learning Path
+## 🧭 About This Repo
+
+This repository breaks down Prometheus and Grafana into focused, self-contained guides — covering architecture, data modeling, service discovery, alerting, and a full Kubernetes deployment lab using `kube-prometheus-stack`.
+
+> 💡 The original single large README has been split into smaller topic-focused documents so each concept can be learned independently.
+
+---
+
+## 📚 Table of Contents
+
+### 🔥 Prometheus
+
+| # | Topic | Description |
+|---|-------|-------------|
+| 1 | [What is Prometheus?](docs/01-what-is-prometheus.md) | Introduction and core concepts |
+| 2 | [Prometheus Architecture](docs/02-prometheus-architecture.md) | Components and how they fit together |
+| 3 | [Prometheus Data Model](docs/03-prometheus-data-model.md) | Metrics, labels, and time series |
+| 4 | [Pull vs Push Model](docs/04-pull-vs-push.md) | How Prometheus collects data |
+| 5 | [Storage, HA and Long-Term Storage](docs/05-storage-ha-long-term-storage.md) | TSDB internals, high availability, remote storage |
+| 6 | [Service Discovery](docs/06-service-discovery.md) | Dynamic target discovery mechanisms |
+| 7 | [Operational Aspects](docs/07-operational-aspects.md) | Running Prometheus in production |
+
+### 📈 Grafana
+
+| # | Topic | Description |
+|---|-------|-------------|
+| 8 | [What is Grafana?](docs/08-what-is-grafana.md) | Visualization layer for your metrics |
+
+### 🛠️ Hands-on
+
+| # | Topic | Description |
+|---|-------|-------------|
+| 9 | [Install Prometheus and Grafana on Kubernetes](docs/09-kubernetes-monitoring-lab.md) | Full lab using `kube-prometheus-stack` |
+| 10 | [Application Monitoring Best Practices](docs/10-monitoring-best-practices.md) | Real-world tips for reliable monitoring |
+
+---
+
+## 🗺️ Learning Path
 
 ```text
-Prometheus Basics
-       ↓
-Architecture
-       ↓
-Data Model
-       ↓
-Pull / Push
-       ↓
-Storage & HA
-       ↓
-Service Discovery
-       ↓
-Operational Concepts
-       ↓
-Grafana
-       ↓
-Kubernetes Monitoring Lab
-       ↓
-Monitoring Best Practices
+ 1. Prometheus Basics
+        ↓
+ 2. Architecture
+        ↓
+ 3. Data Model
+        ↓
+ 4. Pull / Push
+        ↓
+ 5. Storage & HA
+        ↓
+ 6. Service Discovery
+        ↓
+ 7. Operational Concepts
+        ↓
+ 8. Grafana
+        ↓
+ 9. Kubernetes Monitoring Lab
+        ↓
+10. Monitoring Best Practices
 ```
 
-## Repository Structure
+---
+
+## 📁 Repository Structure
 
 ```text
 .
@@ -65,4 +97,18 @@ Monitoring Best Practices
     └── 10-monitoring-best-practices.md
 ```
 
-> The original single large README has been split into smaller topic-focused documents so each concept can be learned independently.
+---
+
+## ✅ Who This Is For
+
+- Engineers new to monitoring who want a structured, sequential path
+- DevOps/SRE folks who need a quick, practical Kubernetes monitoring lab
+- Anyone looking for a concise reference on PromQL, service discovery, and Grafana dashboards
+
+---
+
+<div align="center">
+
+**⭐ If this helped you, consider starring the repo!**
+
+</div>
