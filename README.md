@@ -30,7 +30,7 @@ This repository breaks down Prometheus and Grafana into focused, self-contained 
 | # | Topic | Description |
 |---|-------|-------------|
 | 1 | [Introduction to Monitoring](docs/00-Introduction-to-Monitoring.md) | Introduction to Monitoring and Observability |
-| 2 | What is Prometheus?](docs/01-what-is-prometheus.md) | Introduction and core concepts |
+| 2 | [What is Prometheus?](docs/01-what-is-prometheus.md) | Introduction and core concepts |
 | 3 | [Prometheus Architecture](docs/02-prometheus-architecture.md) | Components and how they fit together |
 | 4 | [Prometheus Data Model](docs/03-prometheus-data-model.md) | Metrics, labels, and time series |
 | 5 | [Pull vs Push Model](docs/04-pull-vs-push.md) | How Prometheus collects data |
