@@ -1,4 +1,4 @@
-#Installing Node Exporter and Monitoring Ec2 machine
+# Installing Node Exporter and Monitoring Ec2 machine
 
 This lab manual provides a step-by-step guide to setting up a monitoring environment using **Prometheus** and **Grafana** on two **AWS EC2 instances**: one for the monitoring tools and one as the target to be monitored.
 
