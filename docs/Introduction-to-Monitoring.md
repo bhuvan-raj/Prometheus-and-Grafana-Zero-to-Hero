@@ -1,4 +1,4 @@
-Monitoring & Observability
+# Monitoring & Observability
 
 Before learning Prometheus and Grafana, it is important to understand the fundamentals of monitoring, observability, and telemetry.
 
