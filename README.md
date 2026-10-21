@@ -109,6 +109,28 @@ This repository breaks down Prometheus and Grafana into focused, self-contained 
 
 ---
 
+## 🔗 Continue Your Observability Journey
+
+Metrics are only one pillar of observability. Once you're comfortable with Prometheus and Grafana, move on to **logs** with the companion repository:
+
+<div align="center">
+
+### 📜 Grafana Loki & Alloy — Zero to Hero
+
+**Log aggregation with Grafana Loki and telemetry collection with Grafana Alloy.**
+
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Grafana--Loki--and--Alloy--Zero--to--Hero-181717?logo=github)](https://github.com/bhuvan-raj/Grafana-Loki-and-Alloy-Zero-to-Hero)
+
+</div>
+
+| Repository | Focus | Link |
+|------------|-------|------|
+| Prometheus & Grafana | Metrics, alerting, dashboards | *(you are here)* |
+| Grafana Loki & Alloy | Logs, collection pipelines, LogQL | [Open repo](https://github.com/bhuvan-raj/Grafana-Loki-and-Alloy-Zero-to-Hero) |
+
+> 💡 Together, these repos cover metrics and logs, so you can correlate what is happening in your systems with why it is happening, all inside Grafana.
+---
+
 <div align="center">
 
 **⭐ If this helped you, consider starring the repo!**
